@@ -29,7 +29,8 @@ public class VariableEx {
 		System.out.println(age);
 		
 		//정수형 변수 3개를 선언한 뒤 데이터를 각각 10, 20, 30으로 초기화 후에 출력
-		
+		int n1 = 10, n2 = 20, n3 = 30;
+		System.out.println(n1 + "," + n2 + "," + n3);
 		
 		
 	}
