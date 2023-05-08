@@ -35,6 +35,19 @@ public class VariableType {
 		char ch2 = 'B';
 		System.out.println(ch2);
 		
+		int i1 = ch1, i2 = 'a';
+		System.out.println(i1 + " " + i2);
+		
+		char ch3 = '가';
+		int i3 = ch3;
+		System.out.println(ch3 + " " + i3);
+		
+		//문자열
+		String str = "안녕하세요";
+		System.out.println(str);
+		str = "Hello World";
+		System.out.println(str);
+		
 	}
 
 }

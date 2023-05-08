@@ -6,3 +6,4 @@
 블록 주석 해제 Ctrl + Shift + \
 코드 라인단위로 복사/붙여넣기 Ctrl + Alt + ↑, Ctrl + Alt + ↓
 코드 라인단위로 이동 Alt + ↑, Alt + ↓
+한줄 단위 삭제 Ctrl + D
