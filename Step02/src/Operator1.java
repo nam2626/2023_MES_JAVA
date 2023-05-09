@@ -24,8 +24,14 @@ public class Operator1 {
 		result = n1 % n2;//나머지
 		System.out.println(result);
 		
-		
-		
+		//실수형 변수 2개 선언 후 임의의 값으로 초기화
+		//사칙연산 결과 출력
+		double d1 = 33.42, d2 = 4.56;
+		System.out.println(d1 + d2);
+		System.out.println(d1 - d2);
+		System.out.println(d1 * d2);
+		System.out.println(d1 / d2);
+		System.out.println(d1 % d2);
 	}
 
 }
