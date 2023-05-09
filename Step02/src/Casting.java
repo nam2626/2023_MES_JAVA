@@ -8,7 +8,9 @@ public class Casting {
 	 * 				-> 정수와 실수를 계산했을때 정수가 실수로 형변환 됨
 	 * 			- 메모리 바이트수가 작은 타입이 큰타입과 계산할 때 바이트 수가 작은 타입이 큰 타입으로 형변환 됨
 	 * 				
-	 * 		강제로 데이터 형변환
+	 * 		강제로 데이터 형변환 : 데이터 손실이 일어날 수 있음
+	 * 			- 수의 체계상 큰 개념을 작은 개념으로 바꿔야 될때 --->  실수 -> 정수
+	 * 			- 메모리 바이트수 큰 타입을 작은 타입으로 바꿔야 될때 --->  double --> float 
 	 */
 	public static void main(String[] args) {
 		//자동으로 형변환 되는 경우
@@ -30,10 +32,25 @@ public class Casting {
 		System.out.println('A' + 1);
 		System.out.println('A' + 'B');
 		
+		//강제로 형변환 하는 방법 ---> (변수 타입) 값 or 변수
+		double pi = -3.1415;
+		int i = (int)pi;
+		System.out.println(i);
+		System.out.println(pi);
+		
+		int a = 65;
+		System.out.println((char)a);
+		System.out.println((char)('A'+1));//결과가 B가 나오게끔 형변환
 		
 	}
 
 }
+
+
+
+
+
+
 
 
 
