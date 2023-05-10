@@ -19,18 +19,30 @@ public class Quest3 {
 		System.out.print("점수 입력 >>> ");
 		int score = sc.nextInt();
 		
-		switch(score / 10) {
-		case 10:
-		case 9:
+		switch(score / 5) {
+		case 20:
+		case 19:
+			System.out.println("A+");
+			break;
+		case 18:
 			System.out.println("A");
 			break;
-		case 8:
+		case 17:
+			System.out.println("B+");
+			break;
+		case 16:
 			System.out.println("B");
 			break;
-		case 7:
+		case 15:
+			System.out.println("C+");
+			break;
+		case 14:
 			System.out.println("C");
 			break;
-		case 6:
+		case 13:
+			System.out.println("D+");
+			break;
+		case 12:
 			System.out.println("D");
 			break;
 		default:
