@@ -20,8 +20,8 @@ public class Quest3 {
 		int score = sc.nextInt();
 		
 		switch(score / 5) {
-		case 20:
-		case 19:
+		case 20:	
+		case 19:	
 			System.out.println("A+");
 			break;
 		case 18:
