@@ -23,5 +23,6 @@
     <ol>
         <li>비트 연산자</li>
         <li>if문</li>
+        <li>switch문</li>
     </ol>
 </ul>
