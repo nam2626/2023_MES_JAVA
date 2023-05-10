@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class IfQuest {
 	/*
@@ -16,7 +17,38 @@ public class IfQuest {
 	 * 
 	 */
 	public static void main(String[] args) {
-
+		Scanner sc = new Scanner(System.in); 
+		//1. 변수선언
+		int n=0;
+		System.out.print("숫자 입력 : ");
+		n = sc.nextInt();
+		//2. 계산해서 결과 출력
+		if(n == 0) {
+			System.out.println("0 입니다.");
+		}
+		if(n % 2 == 0 && n != 0) {
+			System.out.println("짝수 입니다.");
+		}
+		if(n % 2 == 1) {
+			System.out.println("홀수 입니다.");
+		}
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
