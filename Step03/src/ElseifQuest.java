@@ -30,6 +30,10 @@ public class ElseifQuest {
 			grade = "D";
 		}
 		
+		if(score >= 70) {
+			grade += score % 10 >= 5 ? "+" : "";
+		}
+		
 		System.out.println(grade);
 		
 			
