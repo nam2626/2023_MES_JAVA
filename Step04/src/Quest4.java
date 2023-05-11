@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Quest4 {
 	/*
@@ -18,7 +19,34 @@ public class Quest4 {
 	 *   
 	 */
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("입력 받을 숫자 개수 입력 : ");
+		int ea = sc.nextInt();
+		int total = 0;
+		for(int i=0; i < ea;i++) {
+			System.out.print("숫자 입력 : ");
+			int n = sc.nextInt();
+			total += n;
+		}
+		System.out.println("입력하신 숫자들의 총합 : "+total);
+		System.out.println("입력하신 숫자들의 총합 : "+total/(double)ea);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
