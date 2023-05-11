@@ -18,8 +18,12 @@ public class Quest6 {
 		System.out.print("숫자 입력 : ");
 		int ea = sc.nextInt();
 		
-		for(int i=0;i<ea;i++) {
-			for(int j=0;j<=i;j++) {
+		for(int i=1;i<=ea;i++) {
+			for(int j=0;j<(ea - i);j++) {
+				System.out.print(" ");
+			}
+			
+			for(int j=0;j<i;j++) {
 				System.out.print("*");
 			}
 			System.out.println();//줄바꿈
