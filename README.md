@@ -29,5 +29,6 @@
     <li><h3>4일차</h3></li>
     <ol>
         <li>do-while문</li>
+        <li>for문</li>
     </ol>
 </ul>
