@@ -16,6 +16,9 @@ public class LocalVariable {
 		for(int j = 0;j<5;j++) {
 			System.out.println(j);
 		}
+		for(int j = 0;j<5;j++) {
+			System.out.println(j);
+		}
 //		System.out.println(j);
 		
 	}
