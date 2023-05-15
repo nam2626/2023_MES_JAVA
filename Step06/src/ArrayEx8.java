@@ -38,10 +38,13 @@ public class ArrayEx8 {
 				}
 				//  4. 입력 인덱스를 제어하는 변수를 한번 감소
 				idx--;
+				arr[idx] = -1;
+				i = -1; //삭제가 완료되면 다시 처음부터 검색
 			}
 		}
 		//5. 배열 내용을 전부 출력
 		System.out.println("삭제 결과 : " + Arrays.toString(arr));
+		System.out.println(idx);
 	}//end - main
 
 }
