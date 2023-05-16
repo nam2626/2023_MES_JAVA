@@ -5,7 +5,8 @@ public class Quest7 {
 	 * https://ko.wikipedia.org/wiki/%EB%A7%88%EB%B0%A9%EC%A7%84
 	 */
 	public static void main(String[] args) {
-		int[][] arr = new int[3][3];
+		int size = 3;
+		int[][] arr = new int[size][size];
 		//  행번호   열번호              저장할 숫자 개수
 		int row=0, col=arr.length/2, count = arr.length * arr.length;
 		int num = 1;//저장할 숫자
@@ -29,8 +30,13 @@ public class Quest7 {
 			if(tempRow == -1) tempRow += arr.length;
 			if(tempCol == -1) tempCol += arr.length;
 			
-			row = tempRow; col = tempCol; //계산된 인덱스 번호를 저장
-			
+			if(arr[tempRow][tempCol] != 0) {
+				//이동할 위치에 값이 있다.
+				//행번호만 증가
+				row++;
+			}else {
+				row = tempRow; col = tempCol; //계산된 인덱스 번호를 저장
+			}
 			
 			//중간 과정 출력 --> 배열 내용을 전부 출력
 			for(int i=0;i<arr.length;i++) {
