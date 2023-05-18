@@ -12,5 +12,34 @@ package method;
  * 		TV 테스트 하는 클래스 TVMain도 생성해서 기능을 만들때마다 테스트하면 구현
  */
 public class TV {
+	private boolean power;
+	private boolean mute;
+	private int ch;
+	private int vol;
+
+	public TV() {
+		ch = 24;
+		vol = 12;
+	}
 	
+	//전원OnOff
+	public void powerOnOff() {
+		power = !power;
+		
+		if(power)
+			System.out.println("TV 전원 On");
+		else
+			System.out.println("TV 전원 Off");
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
