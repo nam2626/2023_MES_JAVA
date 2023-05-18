@@ -22,8 +22,10 @@ public class Person {
 		this.gender = gender;
 	}
 	
-	//인적정보 출력하는 기능
-	
+	//인적정보 출력하는 기능 -> 이름 나이 남자/여자
+	void printPersonInfo() {
+		System.out.println(name + " " + age + " " + (gender ? "남자" : "여자"));
+	}
 	
 }
 
