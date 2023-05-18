@@ -65,6 +65,30 @@ public class TV {
 		System.out.println("현재 채널 : "+ch);
 	}
 	
+	public void volUp() {
+		if(!power) return;
+		
+		if(mute) {
+			muteOnOff();
+		}else {
+			if(vol < 30) vol++;
+			System.out.println("현재 음량 : "+vol);
+		}
+		
+	}
+	public void volDown() {
+		if(!power) return;
+		
+		if(mute) {
+			muteOnOff();
+		}else {
+			if(vol > 0) vol--;
+			System.out.println("현재 음량 : "+vol);
+		}
+		
+	}
+	
+	
 	
 }
 
