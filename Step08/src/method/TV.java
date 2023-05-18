@@ -43,6 +43,29 @@ public class TV {
 		else
 			System.out.println("음소거 비활성화");
 	}
+	
+	//채널Up
+	public void chUp() {
+		if(!power) return;		
+		
+		ch++;
+		
+		if(ch > 456) ch = 1;
+		
+		System.out.println("현재 채널 : "+ch);
+	}
+	//채널Down
+	public void chDown() {
+		if(!power) return;		
+		
+		ch--;
+		
+		if(ch < 1) ch = 456;
+		
+		System.out.println("현재 채널 : "+ch);
+	}
+	
+	
 }
 
 
