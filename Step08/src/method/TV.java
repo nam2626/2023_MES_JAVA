@@ -31,6 +31,18 @@ public class TV {
 		else
 			System.out.println("TV 전원 Off");
 	}
+	
+	//음소거 OnOff
+	public void muteOnOff() {
+		if(!power) return;//강제 종료
+		
+		mute = !mute;
+		
+		if(mute)
+			System.out.println("음소거 활성화");
+		else
+			System.out.println("음소거 비활성화");
+	}
 }
 
 
