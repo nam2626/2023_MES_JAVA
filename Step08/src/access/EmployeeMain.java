@@ -10,6 +10,9 @@ public class EmployeeMain {
 //		emp.salary = -3000;
 		emp.printEmployeeInfo();
 		
+		System.out.println(emp);
+		System.out.println(emp.toString());
+		
 	}
 
 }

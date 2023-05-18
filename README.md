@@ -57,6 +57,8 @@
     <ol>
         <li>클래스 - 메서드</li>
         <li>클래스 - 접근제어자</li>
+        <li>클래스 - setter/getter</li>
+        <li>클래스 - toString</li>
     </ol>
 
 </ul>

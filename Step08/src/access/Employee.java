@@ -67,10 +67,27 @@ public class Employee {
 	public String getEmployeeName() {
 		return employeeName;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [employeeNo=" + employeeNo + ", employeeName=" + employeeName + ", salary=" + salary
+				+ ", department=" + department + "]";
+	}
 	
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
