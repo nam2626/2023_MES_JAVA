@@ -13,6 +13,37 @@ public class Calcurator {
 		sumCount++;
 		return n1 + n2;
 	}
+	//뺄셈
+	int min(int n1, int n2) {
+		minCount++;
+		return n1 - n2;
+	}
+	//곱셈
+	int mul(int n1, int n2) {
+		mulCount++;
+		return n1 * n2;
+	}
 	
+	//나눗셈
+	int div(int n1, int n2) {
+		divCount++;
+		return n1 / n2;
+	}
 	
+	//사칙연산 수행한 횟수를 각각 출력 ---> 덧셈 : ? , 뺄셈 : ? , 곱셈 : ? , 나눗셈 : ?
+	void printCount() {
+		System.out.printf("덧셈 : %d, 뺄셈 : %d, 곱셈 : %d, 나눗셈 : %d\n",
+				sumCount, minCount, mulCount, divCount);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
