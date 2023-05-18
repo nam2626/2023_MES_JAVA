@@ -29,7 +29,9 @@ public class Employee {
 	}
 	
 	//이름을 문자열로 받아서 employeeName에 저장
-	
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
 	
 	
 	//사원정보 출력하는 메서드
