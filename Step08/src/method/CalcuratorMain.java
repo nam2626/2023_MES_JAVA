@@ -15,7 +15,14 @@ public class CalcuratorMain {
 		
 		cal.printCount();
 		
+		System.out.println(cal.maxNumber(10, 20));
+		System.out.println(cal.minNumber(10, 20));
 		
 	}
 
 }
+
+
+
+
+
