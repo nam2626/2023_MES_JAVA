@@ -69,8 +69,45 @@ public class Aircon {
 		}
 	}
 	
+	public void setTimer() {
+		if(!power) return;
+
+		timer++;
+		timer %= 4;
+		
+		System.out.println(timer != 0 ? timer +"시간 뒤 꺼집니다." : "타이머를 해제합니다.");
+	}
+	
+	public void changeWindPower() {
+		if(!power) return;
+		
+		windMode++;
+		windMode %= 4;
+		
+		switch(windMode) {
+		case 0:
+			System.out.println("바람세기 : 자동");
+			break;
+		case 1:
+			System.out.println("바람세기 : 약풍");
+			break;
+		case 2:
+			System.out.println("바람세기 : 중풍");
+			break;
+		case 3:
+			System.out.println("바람세기 : 강풍");
+			break;
+			
+		}
+	}
 	
 }
+
+
+
+
+
+
 
 
 
