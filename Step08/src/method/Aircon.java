@@ -101,6 +101,11 @@ public class Aircon {
 		}
 	}
 	
+	public void changeWindAngle() {
+		if(!power) return;
+		windAngle = !windAngle;
+		System.out.println(windAngle ? "바람 각도 : 자동" : "바람 각도 : 고정");
+	}
 }
 
 
