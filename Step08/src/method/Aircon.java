@@ -47,9 +47,28 @@ public class Aircon {
 	}
 	public void tempDown() {
 		if(!power) return;
-		if(temp > MIN_TEMP) temp++;
+		if(temp > MIN_TEMP) temp--;
 		System.out.println("설정 온도 : " + temp);
 	}
+	
+	public void changeMode() {
+		if(!power) return;
+		mode++;
+		mode %= 3;
+		
+		switch(mode) {
+		case 0:
+			System.out.println("냉방");
+			break;
+		case 1:
+			System.out.println("송풍");
+			break;
+		case 2:
+			System.out.println("제습");
+			break;
+		}
+	}
+	
 	
 }
 
