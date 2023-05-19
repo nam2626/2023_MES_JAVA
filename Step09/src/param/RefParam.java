@@ -23,6 +23,10 @@ public class RefParam {
 		addAge(p);
 		System.out.println(p.toString());
 		
+		Person s = new Person();
+		System.out.println(s.toString());
+		
+		
 		int n = 10;
 		System.out.println(n);
 		addNumber(n);
