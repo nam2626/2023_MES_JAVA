@@ -19,5 +19,45 @@ package method;
  * 
  */
 public class Aircon {
-
+	private boolean power;
+	private int temp;
+	private int mode;
+	private int timer;
+	private int windMode;
+	private boolean windAngle;
+	private final int MAX_TEMP = 30;
+	private final int MIN_TEMP = 18;
+	
+	public Aircon() {
+		temp = 24;
+	}
+	
+	public void powerOnOff() {
+		power = !power;
+		if(power)
+			System.out.println("에어컨 전원 On");
+		else
+			System.out.println("에어컨 전원 Off");
+	}
+	
+	public void tempUp() {
+		if(!power) return;
+		if(temp < MAX_TEMP) temp++;
+		System.out.println("설정 온도 : " + temp);
+	}
+	public void tempDown() {
+		if(!power) return;
+		if(temp > MIN_TEMP) temp++;
+		System.out.println("설정 온도 : " + temp);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
