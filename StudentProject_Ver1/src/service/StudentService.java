@@ -77,14 +77,18 @@ public class StudentService {
 		//2. 반복문으로 배열에 있는 학생 정보 한건 당 입력 받은 학번과 비교
 		//	 정보를 찾으면 출력
 		//   못찾으면 찾는 데이터가 없다고 메세지 출력
-		for (int i = 0; i < idx; i++) {
-			if(arr[i].getStudentNo().equals(studentNo)) {
-				System.out.println("학생정보 검색 완료");
-				System.out.println(arr[i].toString());
-				return;
-			}
-		}
-		System.out.println("검색한 학생 정보가 없습니다.");
+//		for (int i = 0; i < idx; i++) {
+//			if(arr[i].getStudentNo().equals(studentNo)) {
+//				System.out.println("학생정보 검색 완료");
+//				System.out.println(arr[i].toString());
+//				return;
+//			}
+//		}
+		int i = selectStudentVO(studentNo);
+		if(i == -1)
+			System.out.println("검색한 학생 정보가 없습니다.");
+		else
+			System.out.println(arr[i].toString());
 	}
 
 	public int selectStudentVO(String studentNo) {
@@ -118,6 +122,22 @@ public class StudentService {
 		arr[i].setMajor(major);
 		arr[i].setScore(score);
 		System.out.println("학생정보 수정이 완료되었습니다.");
+	}
+
+	public void deleteStudentVO(Scanner sc) {
+		System.out.println("학생정보 삭제를 시작합니다......");
+		System.out.print("삭제할 학생번호 입력 : ");
+		String studentNo = sc.nextLine();
+		int i = selectStudentVO(studentNo);
+		if(i == -1) {
+			System.out.println("삭제할 학생 정보가 없습니다.");
+			return;
+		}
+		
+		for (int j = i; j < idx-1; j++) {
+			arr[j] = arr[j+1];			
+		}
+		idx--;
 	}
 }
 

@@ -37,6 +37,9 @@ public class StudentMain {
 			case 3:
 				service.updateStudentVO(sc);
 				break;
+			case 4:
+				service.deleteStudentVO(sc);
+				break;
 			case 5:
 				service.printAllStudent();
 				break;
