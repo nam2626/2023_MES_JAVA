@@ -14,7 +14,13 @@ public class StudentService {
 	private int idx;//배열에 저장할 곳 관리하는 인덱스 번호
 	
 	private StudentService() {
-		arr = new StudentVO[5];
+		arr = new StudentVO[10];
+		//학생 데이터를 미리 5건 저장
+		arr[idx++] = new StudentVO("20001111", "김철수", "경영학과", 4.1);
+		arr[idx++] = new StudentVO("20001112", "이영수", "경제학과", 3.6);
+		arr[idx++] = new StudentVO("20001113", "박영희", "컴퓨터공학과", 2.7);
+		arr[idx++] = new StudentVO("20001114", "문수영", "게임학과", 4.5);
+		arr[idx++] = new StudentVO("20001115", "길희수", "생활체육학과", 3.5);
 	}
 
 	public static StudentService getInstance() {
@@ -49,6 +55,18 @@ public class StudentService {
 		}
 		//  3-2. 빈공간이 있으면 빈공간에 저장
 		arr[idx++] = vo;
+	}
+
+	public void printAllStudent() {
+		//전체 회원 정보 출력
+		System.out.println("전체 학생정보를 출력합니다.........");
+		if(idx == 0) {
+			System.out.println("등록된 학생정보가 없습니다.");
+			return;
+		}
+		for (int i = 0; i < idx; i++) {
+			System.out.println(arr[i].toString());
+		}
 	}
 }
 

@@ -31,7 +31,9 @@ public class StudentMain {
 			case 1:
 				service.insertStudentVO(sc);
 				break;
-				
+			case 5:
+				service.printAllStudent();
+				break;
 			}
 		}
 	}
