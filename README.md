@@ -60,7 +60,7 @@
         <li>클래스 - setter/getter</li>
         <li>클래스 - toString</li>
     </ol>
-    <li><h3>9일차</h3></li>
+    <li><h3>9~10일차</h3></li>
     <ol>
         <li>static</li>
         <li>singleton</li>
