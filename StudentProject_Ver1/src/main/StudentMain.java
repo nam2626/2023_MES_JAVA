@@ -27,11 +27,26 @@ public class StudentMain {
 			if(no == 0) break;
 			
 			//메뉴 번호에 해당하는 기능을 실행
-			
+			switch(no) {
+			case 1:
+				service.insertStudentVO(sc);
+				break;
+				
+			}
 		}
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
