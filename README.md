@@ -66,5 +66,10 @@
         <li>singleton</li>
         <li>학생정보 프로젝트 - ver1</li>
     </ol>
+    <li><h3>11일차</h3></li>
+    <ol>
+        <li>학생정보 프로젝트 - ver1</li>
+        <li>문자열 클래스</li>
+    </ol>
 
 </ul>
