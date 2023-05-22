@@ -60,5 +60,11 @@
         <li>클래스 - setter/getter</li>
         <li>클래스 - toString</li>
     </ol>
+    <li><h3>9일차</h3></li>
+    <ol>
+        <li>static</li>
+        <li>singleton</li>
+        <li>학생정보 프로젝트 - ver1</li>
+    </ol>
 
 </ul>

@@ -22,7 +22,7 @@ public class StudentMain {
 			System.out.print("원하시는 번호를 입력하세요 : ");
 			//메뉴 번호를 입력을 받음
 			int no = sc.nextInt();
-			
+			sc.nextLine();//줄바꿈 문자 삭제
 			//0입력시 반복문 종료
 			if(no == 0) break;
 			
