@@ -139,6 +139,17 @@ public class StudentService {
 		}
 		idx--;
 	}
+
+	public void maxScoreStudent() {
+		int max = 0;
+		
+		for (int i = 1; i < idx; i++) {
+			if(arr[max].getScore() < arr[i].getScore())
+				max = i;
+		}
+		System.out.println("석차 1등 학생");
+		System.out.println(arr[max].toString());
+	}
 }
 
 
