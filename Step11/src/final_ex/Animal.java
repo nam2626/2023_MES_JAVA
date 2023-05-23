@@ -8,7 +8,7 @@ public class Animal {
 		this.age = age;
 	}
 	
-	public void eat() {
+	public final void eat() {
 		System.out.println("동물이 먹이를 먹습니다.");
 	}
 	
