@@ -1,30 +1,26 @@
 package has_a_2;
 
-public class K2 extends Gun{
+public class AK47 extends Gun {
 
-	public K2() {
-		bullet = 24;
+	public AK47() {
+		bullet = 28;
 	}
-	
 	@Override
 	public void shot() {
 		if(bullet == 0) {
 			System.out.println("총알이 없습니다. 재장전 하세요");
 		}else {
-			bullet-=3;
-			System.out.println("빵!빵!빵!");
+			bullet-=2;
+			System.out.println("빵!빵!");
 		}
 	}
 	
 	@Override
 	public void reload() {
-		bullet = 24;
-		System.out.println("K2 소총 24발 재장전 완료.");
+		bullet = 28;
+		System.out.println("AK47 소총 28발 재장전 완료.");
 	}
 }
-
-
-
 
 
 

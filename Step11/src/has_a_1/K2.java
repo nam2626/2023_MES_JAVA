@@ -8,9 +8,12 @@ public class K2 extends Gun{
 	
 	@Override
 	public void shot() {
-		super.shot();
-		super.shot();
-		super.shot();
+		if(bullet == 0) {
+			System.out.println("총알이 없습니다. 재장전 하세요");
+		}else {
+			bullet--;
+			System.out.println("빵!");
+		}
 	}
 	
 	@Override
