@@ -4,7 +4,7 @@ package has_a_3;
  * 전원을 켜고, 끄는 메서드, 전원OnOff하는 메서드 총 3가지 메서드를 작성
  */
 public class PowerOnOff {
-	private boolean power;
+	protected boolean power;
 	
 	public void powerOn() {
 		power = true;
