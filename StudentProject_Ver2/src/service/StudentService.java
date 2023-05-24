@@ -14,14 +14,12 @@ public class StudentService {
 	private static StudentService instance = new StudentService();
 	
 	private ArrayList<StudentVO> list; 
-	private StudentVO[] arr;
-	private int idx;//배열에 저장할 곳 관리하는 인덱스 번호
-	
+		
 	private StudentService() {
 		list = new ArrayList<StudentVO>();
 		//학생 데이터를 미리 5건 저장
 		list.add(new StudentVO("20001111", "김철수", "경영학과", 4.1));
-		list.add(new StudentVO("20001112", "이영수", "경제학과", 3.6));
+		list.add(new StudentVO("20001112", "이영수", "경제학과", 4.5));
 		list.add(new StudentVO("20001113", "박영희", "컴퓨터공학과", 2.7));
 		list.add(new StudentVO("20001114", "문수영", "게임학과", 4.5));
 		list.add(new StudentVO("20001115", "길희수", "생활체육학과", 3.5));
@@ -99,9 +97,9 @@ public class StudentService {
 		System.out.print("수정할 평점 : ");
 		double score = sc.nextDouble();
 		sc.nextLine();
-		arr[i].setStudentName(studentName);
-		arr[i].setMajor(major);
-		arr[i].setScore(score);
+		list.get(i).setStudentName(studentName);
+		list.get(i).setMajor(major);
+		list.get(i).setScore(score);
 		System.out.println("학생정보 수정이 완료되었습니다.");
 	}
 
@@ -114,22 +112,20 @@ public class StudentService {
 			System.out.println("삭제할 학생 정보가 없습니다.");
 			return;
 		}
-		
-		for (int j = i; j < idx-1; j++) {
-			arr[j] = arr[j+1];			
-		}
-		idx--;
+		list.remove(i);
 	}
 
 	public void maxScoreStudent() {
-		int max = 0;
 		
-		for (int i = 1; i < idx; i++) {
-			if(arr[max].getScore() < arr[i].getScore())
-				max = i;
+		for(StudentVO vo : list) {
+			int rank = 1;
+			for(int i=0;i<list.size();i++) {
+				if(vo.getScore() < list.get(i).getScore())
+					rank++;
+			}
+			if(rank == 1)
+				System.out.println(vo);
 		}
-		System.out.println("석차 1등 학생");
-		System.out.println(arr[max].toString());
 	}
 }
 
