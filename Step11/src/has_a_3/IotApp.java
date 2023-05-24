@@ -30,7 +30,17 @@ public class IotApp {
 	}
 	
 	//전체 전원 On
+	public void deviceAllPowerOn() {
+		for (int i = 0; i < idx; i++) {
+			arr[i].powerOn();
+		}
+	}
 	//전체 전원 Off
+	public void deviceAllPowerOff() {
+		for (int i = 0; i < idx; i++) {
+			arr[i].powerOff();
+		}
+	}
 }
 
 
