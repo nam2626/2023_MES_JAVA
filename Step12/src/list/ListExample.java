@@ -28,10 +28,33 @@ public class ListExample {
 		list.remove(1);
 		System.out.println(list);
 		
-		//데이터 삭제 - 값을 이용해서 삭제
+		//데이터 삭제 - 값을 이용해서 삭제 ---> equals() 재정의를 해야됨
 		list.remove("java");
 		System.out.println(list);
 		
+		//리스트에 저장된 데이터 개수
+		System.out.println(list.size());
+		
+		//데이터 꺼내는 방법 - 1
+		for(int i=0;i<list.size();i++) {
+			System.out.println(list.get(i));
+		}
+		
+		//데이터 꺼내는 방법 - 2
+		for(String s : list)
+			System.out.println(s);
+		
+		//데이터 수정
+		list.set(0, "안드로이드");
+		System.out.println(list);
+		
+		//데이터를 원하는 인덱스 위치에 추가
+		list.add(1,"자바");
+		System.out.println(list);
+		
+		//해당 데이터가 리스트에 있냐?
+		System.out.println(list.contains("자바"));
+		System.out.println(list.contains("Java"));
 	}
 
 }
