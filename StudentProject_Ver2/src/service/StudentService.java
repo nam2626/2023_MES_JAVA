@@ -62,29 +62,19 @@ public class StudentService {
 
 	public void selectStudentVO(Scanner sc) {
 		System.out.println("학생정보 검색을 시작합니다....");
-		//1. 학번 입력 받음
 		System.out.print("학생번호 입력 ");
 		String studentNo = sc.nextLine();
-		//2. 반복문으로 배열에 있는 학생 정보 한건 당 입력 받은 학번과 비교
-		//	 정보를 찾으면 출력
-		//   못찾으면 찾는 데이터가 없다고 메세지 출력
-//		for (int i = 0; i < idx; i++) {
-//			if(arr[i].getStudentNo().equals(studentNo)) {
-//				System.out.println("학생정보 검색 완료");
-//				System.out.println(arr[i].toString());
-//				return;
-//			}
-//		}
+		
 		int i = selectStudentVO(studentNo);
 		if(i == -1)
 			System.out.println("검색한 학생 정보가 없습니다.");
 		else
-			System.out.println(arr[i].toString());
+			System.out.println(list.get(i));
 	}
 
 	public int selectStudentVO(String studentNo) {
-		for (int i = 0; i < idx; i++) {
-			if(arr[i].getStudentNo().equals(studentNo)) {
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getStudentNo().equals(studentNo)) {
 				return i;
 			}
 		}
