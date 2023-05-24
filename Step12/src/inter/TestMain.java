@@ -1,11 +1,13 @@
 package inter;
 
 public class TestMain {
-
-	public static void main(String[] args) {
-		Dog d = new Dog();
-		Eat e = d;
+	public static void eat(Eat e) {
 		e.eat();
+	}
+	public static void main(String[] args) {
+		eat(new Animal());
+		eat(new Dog());
+		eat(new HighSchoolStudent());
 	}
 
 }
