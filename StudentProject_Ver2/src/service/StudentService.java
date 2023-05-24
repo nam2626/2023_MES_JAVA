@@ -1,6 +1,7 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import vo.StudentVO;
@@ -49,14 +50,13 @@ public class StudentService {
 	}
 
 	public void printAllStudent() {
-		//전체 회원 정보 출력
 		System.out.println("전체 학생정보를 출력합니다.........");
-		if(idx == 0) {
+		if(list.isEmpty()) {
 			System.out.println("등록된 학생정보가 없습니다.");
 			return;
 		}
-		for (int i = 0; i < idx; i++) {
-			System.out.println(arr[i].toString());
+		for (int i=0;i<list.size();i++) {
+			System.out.println(list.get(i));
 		}
 	}
 
