@@ -39,6 +39,22 @@ public class StudentService {
 	public ArrayList<StudentVO> getList() {
 		return list;
 	}
+
+	public StudentVO searchStudent(String studentNo) {
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getStudentNo().equals(studentNo)) {
+				return list.get(i);
+			}
+		}
+		return null;
+	}
+
+	public boolean deleteSutdent(String studentNo) {
+		StudentVO vo = searchStudent(studentNo);
+		if(vo != null)
+			return list.remove(vo);//데이터 삭제
+		return false;//삭제할 데이터가 없는 경우
+	}
 	
 	
 }

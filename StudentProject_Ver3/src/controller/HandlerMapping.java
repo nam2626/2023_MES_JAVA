@@ -20,6 +20,12 @@ public class HandlerMapping {
 		case 1:
 			controller = new InsertStudentController();
 			break;
+		case 2:
+			controller = new SearchStudentController();
+			break;
+		case 4:
+			controller = new DeleteStudentController();
+			break;
 		case 5:
 			controller = new PrintAllStudentController();
 			break;
