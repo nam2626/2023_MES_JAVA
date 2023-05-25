@@ -19,10 +19,20 @@ public class CalendarTest {
 		System.out.println(calendar.get(Calendar.MILLISECOND));
 		System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
 		
+		System.out.println(calendar.getTime());
 		
+		calendar.set(Calendar.YEAR, 2024);
+		System.out.println(calendar.getTime());
+		calendar.set(Calendar.MONTH, 6);
+		System.out.println(calendar.getTime());
 	}
 
 }
+
+
+
+
+
 
 
 
