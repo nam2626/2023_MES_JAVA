@@ -23,6 +23,9 @@ public class HandlerMapping {
 		case 2:
 			controller = new SearchStudentController();
 			break;
+		case 3:
+			controller = new UpdateStudentController();
+			break;
 		case 4:
 			controller = new DeleteStudentController();
 			break;
