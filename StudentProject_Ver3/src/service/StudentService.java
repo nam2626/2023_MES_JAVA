@@ -35,6 +35,10 @@ public class StudentService {
 		list.add(studentVO);
 		return true;
 	}
+
+	public ArrayList<StudentVO> getList() {
+		return list;
+	}
 	
 	
 }
