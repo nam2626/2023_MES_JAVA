@@ -2,6 +2,8 @@ package main;
 
 import java.util.Scanner;
 
+import controller.Controller;
+import controller.HandlerMapping;
 import service.StudentService;
 
 public class StudentMain {
@@ -26,6 +28,9 @@ public class StudentMain {
 			//0입력시 반복문 종료
 			if(no == 0) break;
 			
+			Controller controller = HandlerMapping.getInstance().createController(no);
+			if(controller != null) controller.excute(sc);//작업시작
+			else System.out.println("정확한 메뉴 번호를 입력하세요.");
 			
 		}
 	}
