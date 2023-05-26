@@ -41,16 +41,16 @@ public class StudentService {
 		return list;
 	}
 
-	public StudentVO searchStudent(String studentNo) {
+	public StudentVO searchStudent(String studentNo) throws StudentException {
 		for (int i = 0; i < list.size(); i++) {
 			if(list.get(i).getStudentNo().equals(studentNo)) {
 				return list.get(i);
 			}
 		}
-		return null;
+		throw new StudentException("검색한 해당 학생정보가 없습니다.");
 	}
 
-	public boolean deleteSutdent(String studentNo) {
+	public boolean deleteSutdent(String studentNo) throws StudentException {
 		StudentVO vo = searchStudent(studentNo);
 		if(vo != null)
 			return list.remove(vo);//데이터 삭제

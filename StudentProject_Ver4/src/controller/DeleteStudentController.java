@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import exception.StudentException;
 import service.StudentService;
 
 public class DeleteStudentController implements Controller {
@@ -12,12 +13,15 @@ public class DeleteStudentController implements Controller {
 		System.out.print("삭제할 학생번호 입력 ");
 		String studentNo = sc.nextLine();
 		
-		boolean result = StudentService.getInstance().deleteSutdent(studentNo);
-		
-		if(result)
+		try {
+			StudentService.getInstance().deleteSutdent(studentNo);
 			System.out.println("학생정보 삭제 완료.");
-		else
-			System.out.println("삭제할 학생정보가 없습니다.");
+		} catch (StudentException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		
 	}
 
 }

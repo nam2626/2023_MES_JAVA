@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import exception.StudentException;
 import service.StudentService;
 import vo.StudentVO;
 
@@ -13,11 +14,13 @@ public class SearchStudentController implements Controller {
 		System.out.print("학생번호 입력 ");
 		String studentNo = sc.nextLine();
 		
-		StudentVO vo = StudentService.getInstance().searchStudent(studentNo);
-		if(vo == null)
-			System.out.println("검색결과가 없습니다.");
-		else
+		StudentVO vo;
+		try {
+			vo = StudentService.getInstance().searchStudent(studentNo);
 			System.out.println(vo);
+		} catch (StudentException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }

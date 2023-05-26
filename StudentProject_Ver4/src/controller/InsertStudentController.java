@@ -35,7 +35,7 @@ public class InsertStudentController implements Controller {
 			else
 				System.out.println("학생정보 등록에 실패하였습니다.");
 		} catch (StudentException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
