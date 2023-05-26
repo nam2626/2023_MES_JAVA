@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import exception.StudentException;
 import vo.StudentVO;
 
 /*
@@ -54,6 +55,12 @@ public class StudentService {
 		if(vo != null)
 			return list.remove(vo);//데이터 삭제
 		return false;//삭제할 데이터가 없는 경우
+	}
+
+	public void checkStudentNo(String studentNo) throws StudentException {
+		if(!list.contains(studentNo)) {
+			throw new StudentException("중복된 학번을 입력했습니다.");
+		}
 	}
 	
 	

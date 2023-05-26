@@ -1,5 +1,7 @@
 package vo;
 
+import java.util.Objects;
+
 public class StudentVO {
 	//학번 이름 학과명 평점
 	private String studentNo;
@@ -53,6 +55,24 @@ public class StudentVO {
 	@Override
 	public String toString() {
 		return String.format("%s %s %s %f", studentNo,studentName,major,score);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(studentNo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof String) {
+			return studentNo.equals(obj);
+		}
+		if (this == obj)
+			return true;
+		if (!(obj instanceof StudentVO))
+			return false;
+		StudentVO other = (StudentVO) obj;
+		return Objects.equals(studentNo, other.studentNo);
 	}
 	
 	
