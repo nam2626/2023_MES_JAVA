@@ -1,5 +1,9 @@
 package dao;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import config.DBManager;
 import vo.StudentVO;
 
@@ -19,10 +23,31 @@ public class StudentDAO {
 	}
 
 	public StudentVO selectStudent(String studentNo) {
-		//DB 접속 정보를 가져와서 학생 정보 검색 후 해당 객체를 리턴
-		//JDBCTest5를 참고해서 작업
-		
-		return null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		StudentVO vo = null;
+		//1. SQL 생성
+		String sql = "select s.std_no, s.std_name, m.major_name, "
+				+ "s.std_score from student s, major m "
+				+ "where s.major_no = m.major_no and s.std_no = ?";
+		try {
+			//2. PreparedStatement 생성
+			pstmt = manager.getConn().prepareStatement(sql);
+			pstmt.setString(1, studentNo);
+			//3. SQL 실행
+			rs = pstmt.executeQuery();
+			//4. 결과 받음
+			if(rs.next()) {
+				vo = new StudentVO(rs.getString(1), rs.getString(2), 
+						rs.getString(3), rs.getDouble(4));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			manager.close(pstmt, rs);
+		}
+		//5. 결과 return
+		return vo;
 	}
 
 	
