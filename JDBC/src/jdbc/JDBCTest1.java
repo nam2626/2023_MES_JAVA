@@ -24,9 +24,14 @@ public class JDBCTest1 {
 			ResultSet rs = pstmt.executeQuery();
 			//6. Result Print
 			while(rs.next()) {
-				System.out.println(rs.getString(1) + " " + rs.getString(2));
+				//컬럼명이나 컬럼 순번을 써서 해당 컬럼 데이터를 읽어옴
+				System.out.println(rs.getString(1) + " " + rs.getString(2)+ " "
+							+ rs.getInt(3) + " " + rs.getDouble("std_score"));
 			}
 			//7. Close
+			rs.close();
+			pstmt.close();
+			conn.close();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
