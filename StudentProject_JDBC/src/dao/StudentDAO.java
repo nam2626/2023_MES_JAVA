@@ -52,17 +52,29 @@ public class StudentDAO {
 	}
 
 	public ArrayList<StudentVO> selectAllStudent() {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 //		1. ArrayList<StudentVO> 생성
-		
+		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
 //		2. SQL문 작성 - 전체 학생 정보 조회
-		
+		String sql = "select s.std_no, s.std_name, m.major_name, "
+				+ "s.std_score from student s, major m "
+				+ "where s.major_no = m.major_no";
+		try {
 //		3. SQL문 실행
-		
+			pstmt = manager.getConn().prepareStatement(sql);
+			rs = pstmt.executeQuery();
 //		4. ResultSet 학생 정보 한건씩 읽어와서 객체 생성 후 ArrayList(1번에서 생성한)에 저장
-		
+			while(rs.next()) {
+				StudentVO vo = new StudentVO(rs.getString(1), rs.getString(2), 
+						rs.getString(3), rs.getDouble(4));
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 //		5. ArrayList를 StudentService로 리턴
-		
-		return null;
+		return list;
 	}
 
 	
