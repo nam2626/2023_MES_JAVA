@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import dao.StudentDAO;
 import exception.StudentException;
 import vo.StudentVO;
 
@@ -42,12 +43,10 @@ public class StudentService {
 	}
 
 	public StudentVO searchStudent(String studentNo) throws StudentException {
-		for (int i = 0; i < list.size(); i++) {
-			if(list.get(i).getStudentNo().equals(studentNo)) {
-				return list.get(i);
-			}
-		}
-		throw new StudentException("검색한 해당 학생정보가 없습니다.");
+		StudentVO vo = StudentDAO.getInstance().selectStudent(studentNo);
+		if(vo == null)
+			throw new StudentException("검색한 해당 학생정보가 없습니다.");
+		return vo;
 	}
 
 	public boolean deleteSutdent(String studentNo) throws StudentException {
