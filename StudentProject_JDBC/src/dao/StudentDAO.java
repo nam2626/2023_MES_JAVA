@@ -3,6 +3,7 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import config.DBManager;
 import vo.StudentVO;
@@ -48,6 +49,20 @@ public class StudentDAO {
 		}
 		//5. 결과 return
 		return vo;
+	}
+
+	public ArrayList<StudentVO> selectAllStudent() {
+//		1. ArrayList<StudentVO> 생성
+		
+//		2. SQL문 작성 - 전체 학생 정보 조회
+		
+//		3. SQL문 실행
+		
+//		4. ResultSet 학생 정보 한건씩 읽어와서 객체 생성 후 ArrayList(1번에서 생성한)에 저장
+		
+//		5. ArrayList를 StudentService로 리턴
+		
+		return null;
 	}
 
 	

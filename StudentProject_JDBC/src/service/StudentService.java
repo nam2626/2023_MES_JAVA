@@ -61,6 +61,10 @@ public class StudentService {
 			throw new StudentException("중복된 학번을 입력했습니다.");
 		}
 	}
+
+	public ArrayList<StudentVO> selectAllStudnet() {
+		return StudentDAO.getInstance().selectAllStudent();
+	}
 	
 	
 }
