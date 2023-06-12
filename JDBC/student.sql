@@ -6,3 +6,5 @@ where s.major_no = m.major_no and s.std_no = ?;
 
 --학생정보 등록
 insert into STUDENT values(?,?,?,(select major_no from major where major_name = ?));
+
+select * from MAJOR;
