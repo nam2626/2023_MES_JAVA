@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import exception.StudentException;
@@ -27,15 +28,14 @@ public class InsertStudentController implements Controller {
 			sc.nextLine();
 			
 			//서비스 클래스의 데이터 등록하는 메서드를 호출
-			boolean result = StudentService.getInstance().insertStudent(
+			StudentService.getInstance().insertStudent(
 										new StudentVO(studentNo, studentName, major, score));
-			
-			if(result)
-				System.out.println("학생정보 등록이 되었습니다.");
-			else
-				System.out.println("학생정보 등록에 실패하였습니다.");
+						
+			System.out.println("학생정보 등록 성공");
 		} catch (StudentException e) {
 			System.out.println(e.getMessage());
+		} catch (SQLException e) {
+			System.out.println("학생정보 등록 실패");
 		}
 	}
 

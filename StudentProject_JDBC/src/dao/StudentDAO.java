@@ -72,13 +72,34 @@ public class StudentDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			manager.close(pstmt, rs);
 		}
 //		5. ArrayList를 StudentService로 리턴
 		return list;
 	}
-
+	
+	public void insertStudent(StudentVO vo) throws SQLException {
+		String sql = "insert into STUDENT values(?,?,?,"
+				+ "(select major_no from major where major_name = ?))";
+		PreparedStatement pstmt = manager.getConn().prepareStatement(sql);
+		pstmt.setString(1, vo.getStudentNo());
+		pstmt.setString(2, vo.getStudentName());
+		pstmt.setDouble(3, vo.getScore());
+		pstmt.setString(4, vo.getMajor());
+		
+		pstmt.executeUpdate();
+		
+		manager.close(pstmt, null);
+	}
 	
 }
+
+
+
+
+
+
 
 
 

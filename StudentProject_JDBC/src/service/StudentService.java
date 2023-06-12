@@ -1,5 +1,6 @@
 package service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -33,9 +34,8 @@ public class StudentService {
 		return instance;
 	}
 
-	public boolean insertStudent(StudentVO studentVO) {
-		list.add(studentVO);
-		return true;
+	public void insertStudent(StudentVO vo) throws SQLException {
+		StudentDAO.getInstance().insertStudent(vo);
 	}
 
 	public ArrayList<StudentVO> getList() {
@@ -57,7 +57,8 @@ public class StudentService {
 	}
 
 	public void checkStudentNo(String studentNo) throws StudentException {
-		if(!list.contains(studentNo)) {
+		StudentVO vo = StudentDAO.getInstance().selectStudent(studentNo);
+		if(vo != null) {
 			throw new StudentException("중복된 학번을 입력했습니다.");
 		}
 	}
