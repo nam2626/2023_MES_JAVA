@@ -92,6 +92,27 @@ public class StudentDAO {
 		
 		manager.close(pstmt, null);
 	}
+
+	public int deleteStudent(String studentNo) {
+		int count = 0;
+		
+		String sql = "delete from student where std_no = ?";
+		
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = manager.getConn().prepareStatement(sql);
+			pstmt.setString(1, studentNo);
+			count = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			manager.close(pstmt, null);
+		}
+		
+		return count;
+	}
 	
 }
 
