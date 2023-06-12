@@ -14,7 +14,7 @@ public class DeleteStudentController implements Controller {
 		String studentNo = sc.nextLine();
 		
 		try {
-			StudentService.getInstance().deleteSutdent(studentNo);
+			StudentService.getInstance().deleteStudent(studentNo);
 			System.out.println("학생정보 삭제 완료.");
 		} catch (StudentException e) {
 			System.out.println(e.getMessage());

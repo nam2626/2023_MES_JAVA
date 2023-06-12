@@ -49,11 +49,10 @@ public class StudentService {
 		return vo;
 	}
 
-	public boolean deleteSutdent(String studentNo) throws StudentException {
-		StudentVO vo = searchStudent(studentNo);
-		if(vo != null)
-			return list.remove(vo);//데이터 삭제
-		return false;//삭제할 데이터가 없는 경우
+	public void deleteStudent(String studentNo) throws StudentException {
+		int result = StudentDAO.getInstance().deleteStudent(studentNo);
+		if(result == 0)
+			throw new StudentException("학생정보 삭제에 실패했습니다.");
 	}
 
 	public void checkStudentNo(String studentNo) throws StudentException {
