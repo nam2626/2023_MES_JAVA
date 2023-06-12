@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import exception.StudentException;
@@ -28,9 +29,12 @@ public class UpdateStudentController implements Controller {
 			double score = sc.nextDouble();
 			sc.nextLine();
 			vo.setScore(score);
+			StudentService.getInstance().updateStudent(vo);
 			System.out.println("학생정보 수정을 완료하였습니다.");
 		} catch (StudentException e) {
 			System.out.println(e.getMessage());
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 

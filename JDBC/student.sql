@@ -8,3 +8,5 @@ where s.major_no = m.major_no and s.std_no = ?;
 insert into STUDENT values(?,?,?,(select major_no from major where major_name = ?));
 
 select * from MAJOR;
+
+update student set std_name = ?, std_score = ?, major_no = (select major_no from major where major_name = ?) where std_no = ?   

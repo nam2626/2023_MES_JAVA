@@ -65,6 +65,10 @@ public class StudentService {
 	public ArrayList<StudentVO> selectAllStudnet() {
 		return StudentDAO.getInstance().selectAllStudent();
 	}
+
+	public void updateStudent(StudentVO vo) throws SQLException {
+		StudentDAO.getInstance().updateStudent(vo);
+	}
 	
 	
 }

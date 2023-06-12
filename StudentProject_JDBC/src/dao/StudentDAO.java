@@ -113,6 +113,22 @@ public class StudentDAO {
 		
 		return count;
 	}
+
+	public void updateStudent(StudentVO vo) throws SQLException {
+		String sql = "update student set std_name = ?, std_score = ?, "
+				+ "major_no = (select major_no from major where major_name = ?)"
+				+ " where std_no = ?";
+		PreparedStatement pstmt = manager.getConn().prepareStatement(sql);
+		pstmt.setString(4, vo.getStudentNo());
+		pstmt.setString(1, vo.getStudentName());
+		pstmt.setDouble(2, vo.getScore());
+		pstmt.setString(3, vo.getMajor());
+		
+		pstmt.executeUpdate();
+		
+		manager.close(pstmt, null);
+		
+	}
 	
 }
 
